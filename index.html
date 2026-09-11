@@ -1,457 +1,1206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Darul Falah Model Madrasah</title>
-
-    <meta name="description"
-          content="Official website of Darul Falah Model Madrasah, Sylhet, Bangladesh.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #183b2a;
-            background: #f8faf8;
-            line-height: 1.6;
-        }
-
-        /* ================= HEADER ================= */
-
-        header {
-            background: #087f45;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-        }
-
-        .top-header {
-            max-width: 1200px;
-            margin: auto;
-            padding: 14px 25px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .logo-placeholder {
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: white;
-            color: #087f45;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 17px;
-            border: 3px solid #8dcc3f;
-        }
-
-        .brand h1 {
-            font-size: 20px;
-            line-height: 1.2;
-        }
-
-        .brand p {
-            font-size: 12px;
-            opacity: 0.9;
-        }
-
-        nav {
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            background: rgba(255,255,255,0.15);
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-            min-height: 560px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 20px;
-            background:
-                linear-gradient(rgba(3, 83, 45, 0.88),
-                                rgba(3, 83, 45, 0.88));
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero h2 {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-
-        .hero h3 {
-            font-size: 22px;
-            font-weight: normal;
-            margin-bottom: 15px;
-            color: #d8f0b0;
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            font-size: 17px;
-        }
-
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .btn-primary {
-            background: #8dcc3f;
-            color: #123b22;
-        }
-
-        .btn-secondary {
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        /* ================= GENERAL ================= */
-
-        section {
-            padding: 70px 20px;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title h2 {
-            font-size: 30px;
-            color: #087f45;
-            margin-bottom: 8px;
-        }
-
-        .section-title p {
-            color: #666;
-        }
-
-        /* ================= QUICK LINKS ================= */
-
-        .quick-section {
-            margin-top: -45px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .quick-grid {
-            max-width: 1050px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .quick-card {
-            background: white;
-            padding: 25px 15px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
-            text-decoration: none;
-            color: #183b2a;
-            transition: 0.2s;
-        }
-
-        .quick-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .quick-card .icon {
-            font-size: 30px;
-            margin-bottom: 8px;
-        }
-
-        .quick-card h3 {
-            color: #087f45;
-            font-size: 17px;
-        }
-
-        /* ================= ABOUT ================= */
-
-        .about {
-            background: white;
-        }
-
-        .about-content {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        /* ================= ACADEMIC ================= */
-
-        .academic-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .academic-card {
-            background: white;
-            padding: 28px;
-            border-radius: 8px;
-            border-left: 4px solid #8dcc3f;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.07);
-        }
-
-        .academic-card h3 {
-            color: #087f45;
-            margin-bottom: 8px;
-        }
-
-        .academic-card p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* ================= NOTICE ================= */
-
-        .notice-section {
-            background: #eef7ed;
-        }
-
-        .notice-list {
-            max-width: 850px;
-            margin: auto;
-        }
-
-        .notice {
-            background: white;
-            padding: 18px 20px;
-            margin-bottom: 12px;
-            border-radius: 6px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .notice strong {
-            color: #087f45;
-        }
-
-        .notice-date {
-            color: #777;
-            font-size: 13px;
-            white-space: nowrap;
-        }
-
-        /* ================= EXAM ================= */
-
-        .exam-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .exam-card {
-            background: white;
-            padding: 30px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.07);
-        }
-
-        .exam-card h3 {
-            color: #087f45;
-            margin: 10px 0;
-        }
-
-        /* ================= GALLERY ================= */
-
-        .gallery {
-            background: white;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .gallery-item {
-            height: 190px;
-            background: #e8eee8;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6a756d;
-            font-weight: bold;
-        }
-
-        /* ================= CONTACT ================= */
-
-        .contact {
-            background: #075e34;
-            color: white;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            text-align: center;
-        }
-
-        .contact-box {
-            padding: 20px;
-        }
-
-        .contact-box h3 {
-            margin-bottom: 8px;
-            color: #ccefa4;
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            background: #043b22;
-            color: #c8d8cf;
-            text-align: center;
-            padding: 25px 20px;
-            font-size: 13px;
-        }
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 850px) {
-
-            .top-header {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            nav {
-                width: 100%;
-            }
-
-            .hero h2 {
-                font-size: 35px;
-            }
-
-            .quick-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .academic-grid,
-            .exam-grid,
-            .gallery-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .quick-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .brand h1 {
-                font-size: 17px;
-            }
-
-            .notice {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Darul Falah Model Madrasah | Sylhet</title>
+
+<meta name="description"
+content="Official website of Darul Falah Model Madrasah, Sylhet, Bangladesh.">
+
+<style>
+
+/* =====================================================
+   DFMM PROFESSIONAL WEBSITE — VERSION 2
+   ===================================================== */
+
+:root {
+    --green: #087f45;
+    --dark-green: #04552e;
+    --deep-green: #023b20;
+    --light-green: #8dcc3f;
+    --soft-green: #edf8e9;
+    --white: #ffffff;
+    --text: #183b2a;
+    --muted: #66756d;
+    --gold: #e6ad3c;
+    --light: #f7faf7;
+    --border: #e5ece7;
+    --shadow: 0 12px 35px rgba(0, 60, 35, 0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--light);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: min(1160px, 92%);
+    margin: auto;
+}
+
+section {
+    padding: 90px 0;
+}
+
+/* =====================================================
+   TOP BAR
+   ===================================================== */
+
+.topbar {
+    background: var(--deep-green);
+    color: white;
+    font-size: 13px;
+}
+
+.topbar-inner {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.topbar-left,
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.topbar span {
+    opacity: .92;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,.07);
+}
+
+.header-inner {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+/* temporary logo until actual logo is uploaded */
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.logo-mark {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green), var(--light-green));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+    border: 3px solid #e5f1dc;
+    box-shadow: 0 5px 15px rgba(8,127,69,.20);
+}
+
+.logo-text h1 {
+    font-size: 18px;
+    color: var(--deep-green);
+    line-height: 1.2;
+}
+
+.logo-text p {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .5px;
+}
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+nav a {
+    padding: 9px 11px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #315243;
+    border-radius: 6px;
+    transition: .25s;
+}
+
+nav a:hover,
+nav a.active {
+    background: var(--soft-green);
+    color: var(--green);
+}
+
+.nav-button {
+    background: var(--green);
+    color: white !important;
+    padding: 10px 16px !important;
+    margin-left: 5px;
+}
+
+.nav-button:hover {
+    background: var(--dark-green) !important;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 80% 20%, rgba(141,204,63,.25), transparent 28%),
+        radial-gradient(circle at 10% 80%, rgba(141,204,63,.13), transparent 30%),
+        linear-gradient(135deg, #023b20 0%, #087f45 60%, #075e34 100%);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+    right: -140px;
+    top: -100px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 50%;
+    right: 40px;
+    bottom: -150px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: .5px;
+    margin-bottom: 22px;
+    backdrop-filter: blur(8px);
+}
+
+.hero-badge span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--light-green);
+    box-shadow: 0 0 12px var(--light-green);
+}
+
+.hero h2 {
+    font-size: clamp(38px, 6vw, 67px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    margin-bottom: 17px;
+}
+
+.hero h3 {
+    color: #d7efb9;
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 16px;
+    color: rgba(255,255,255,.86);
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 21px;
+    border-radius: 7px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .25s;
+}
+
+.btn-primary {
+    background: var(--light-green);
+    color: #123d23;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(141,204,63,.25);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,.45);
+    color: white;
+    background: rgba(255,255,255,.06);
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--green);
+}
+
+/* =====================================================
+   QUICK ACCESS
+   ===================================================== */
+
+.quick-wrap {
+    margin-top: -55px;
+    position: relative;
+    z-index: 10;
+}
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.quick-card {
+    padding: 25px 20px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+    transition: .25s;
+}
+
+.quick-card:last-child {
+    border-right: none;
+}
+
+.quick-card:hover {
+    background: var(--soft-green);
+    transform: translateY(-3px);
+}
+
+.quick-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.quick-card h3 {
+    color: var(--green);
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.quick-card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* =====================================================
+   SECTION TITLE
+   ===================================================== */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading .small {
+    display: block;
+    text-transform: uppercase;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    color: var(--deep-green);
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: auto;
+    font-size: 14px;
+}
+
+/* =====================================================
+   WELCOME
+   ===================================================== */
+
+.welcome {
+    background: white;
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.welcome-text .eyebrow {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.welcome-text h2 {
+    font-size: 38px;
+    color: var(--deep-green);
+    line-height: 1.2;
+    margin: 10px 0 18px;
+}
+
+.welcome-text p {
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.welcome-list {
+    margin: 22px 0;
+    display: grid;
+    gap: 10px;
+}
+
+.welcome-list div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--soft-green);
+    color: var(--green);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.welcome-visual {
+    min-height: 380px;
+    border-radius: 18px;
+    background:
+        linear-gradient(145deg, rgba(8,127,69,.95), rgba(3,59,32,.98));
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+}
+
+.visual-circle {
+    width: 260px;
+    height: 260px;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visual-inner {
+    width: 185px;
+    height: 185px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.visual-inner strong {
+    font-size: 36px;
+    color: var(--light-green);
+}
+
+.visual-inner span {
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* =====================================================
+   STATS
+   ===================================================== */
+
+.stats {
+    background: var(--soft-green);
+    padding: 50px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+    text-align: center;
+    border-right: 1px solid #d7e6d3;
+}
+
+.stat:last-child {
+    border: none;
+}
+
+.stat strong {
+    display: block;
+    font-size: 34px;
+    color: var(--green);
+}
+
+.stat span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =====================================================
+   ACADEMIC
+   ===================================================== */
+
+.academic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.academic-card {
+    background: white;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.04);
+    transition: .25s;
+}
+
+.academic-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+    border-color: #cfe5c7;
+}
+
+.card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 11px;
+    background: var(--soft-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.academic-card h3 {
+    color: var(--deep-green);
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.academic-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =====================================================
+   NOTICE
+   ===================================================== */
+
+.notice-section {
+    background: var(--soft-green);
+}
+
+.notice-layout {
+    display: grid;
+    grid-template-columns: .75fr 1.25fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.notice-intro {
+    background: var(--green);
+    color: white;
+    padding: 35px;
+    border-radius: 14px;
+}
+
+.notice-intro h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.notice-intro p {
+    color: rgba(255,255,255,.8);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.notice-list {
+    display: grid;
+    gap: 12px;
+}
+
+.notice {
+    background: white;
+    padding: 17px 20px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--border);
+    transition: .2s;
+}
+
+.notice:hover {
+    transform: translateX(5px);
+}
+
+.notice-date-box {
+    min-width: 48px;
+    text-align: center;
+    background: var(--soft-green);
+    color: var(--green);
+    border-radius: 6px;
+    padding: 6px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.notice-content {
+    flex: 1;
+}
+
+.notice-content strong {
+    display: block;
+    font-size: 14px;
+    color: var(--deep-green);
+}
+
+.notice-content span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* =====================================================
+   EXAMINATION / RESULT
+   ===================================================== */
+
+.exam-section {
+    background: white;
+}
+
+.result-box {
+    max-width: 900px;
+    margin: auto;
+    background:
+        linear-gradient(135deg, #043b22, #087f45);
+    color: white;
+    padding: 45px;
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.result-box::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 50%;
+    right: -100px;
+    top: -100px;
+}
+
+.result-box h2 {
+    font-size: 31px;
+    margin-bottom: 8px;
+}
+
+.result-box p {
+    color: rgba(255,255,255,.78);
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.result-search {
+    max-width: 650px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 8px;
+}
+
+.result-search input,
+.result-search select {
+    border: none;
+    outline: none;
+    padding: 13px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.result-search button {
+    border: none;
+    cursor: pointer;
+    padding: 13px 18px;
+    border-radius: 6px;
+    background: var(--light-green);
+    color: #153d22;
+    font-weight: 800;
+}
+
+/* =====================================================
+   PRINCIPAL MESSAGE
+   ===================================================== */
+
+.message {
+    background: var(--light);
+}
+
+.message-card {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    border-radius: 15px;
+    padding: 38px;
+    box-shadow: 0 5px 25px rgba(0,0,0,.05);
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.message-photo {
+    width: 140px;
+    height: 160px;
+    border-radius: 10px;
+    background: var(--soft-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green);
+    font-size: 12px;
+    text-align: center;
+}
+
+.message-text blockquote {
+    font-size: 17px;
+    color: #44564c;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.message-text strong {
+    color: var(--deep-green);
+}
+
+.message-text small {
+    color: var(--muted);
+}
+
+/* =====================================================
+   NEWS
+   ===================================================== */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.news-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: .25s;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.news-image {
+    height: 160px;
+    background:
+        linear-gradient(135deg, #087f45, #8dcc3f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 36px;
+}
+
+.news-body {
+    padding: 22px;
+}
+
+.news-body small {
+    color: var(--green);
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.news-body h3 {
+    color: var(--deep-green);
+    font-size: 17px;
+    margin: 7px 0;
+}
+
+.news-body p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =====================================================
+   GALLERY
+   ===================================================== */
+
+.gallery {
+    background: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.gallery-item {
+    height: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(145deg, #087f45, #8dcc3f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.gallery-item::after {
+    content: "DFMM";
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    font-size: 10px;
+    opacity: .5;
+}
+
+/* =====================================================
+   CONTACT
+   ===================================================== */
+
+.contact {
+    background: var(--deep-green);
+    color: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.contact-card {
+    padding: 28px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 11px;
+    text-align: center;
+}
+
+.contact-icon {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.contact-card h3 {
+    color: #d9efbc;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.contact-card p {
+    color: rgba(255,255,255,.7);
+    font-size: 12px;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    background: #022716;
+    color: #aebdb4;
+    padding: 35px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.footer-brand h2 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.footer-brand p {
+    font-size: 12px;
+    max-width: 330px;
+}
+
+.footer-column h3 {
+    color: white;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    display: block;
+    font-size: 12px;
+    margin: 5px 0;
+    color: #aebdb4;
+}
+
+.footer-column a:hover {
+    color: var(--light-green);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding-top: 17px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+}
+
+/* =====================================================
+   MOBILE MENU BUTTON
+   ===================================================== */
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: var(--soft-green);
+    color: var(--green);
+    font-size: 22px;
+    width: 42px;
+    height: 42px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media(max-width: 950px) {
+
+    nav a {
+        padding: 8px 7px;
+        font-size: 12px;
+    }
+
+    .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-card:nth-child(2) {
+        border-right: none;
+    }
+
+    .welcome-grid,
+    .notice-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .academic-grid,
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .result-search {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 700px) {
+
+    section {
+        padding: 65px 0;
+    }
+
+    .topbar {
+        display: none;
+    }
+
+    .header-inner {
+        min-height: 70px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        left: 4%;
+        right: 4%;
+        top: 75px;
+        background: white;
+        padding: 12px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 11px 13px;
+    }
+
+    .nav-button {
+        margin-left: 0;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h2 {
+        font-size: 40px;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .welcome-text h2 {
+        font-size: 30px;
+    }
+
+    .academic-grid,
+    .news-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .stat {
+        border: none;
+    }
+
+    .message-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .message-photo {
+        margin: auto;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 7px;
+    }
+}
+
+@media(max-width: 450px) {
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-box {
+        padding: 30px 18px;
+    }
+
+    .result-search {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- =====================================================
+     TOP BAR
+     ===================================================== -->
+
+<div class="topbar">
+
+    <div class="container topbar-inner">
+
+        <div class="topbar-left">
+            <span>📍 Sylhet, Bangladesh</span>
+            <span>✉ Official Institutional Website</span>
+        </div>
+
+        <div class="topbar-right">
+            <span>Academic Excellence</span>
+            <span>•</span>
+            <span>Character Building</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
 <header>
 
-    <div class="top-header">
+    <div class="container header-inner">
 
-        <div class="brand">
+        <a href="#home" class="logo-box">
 
-            <div class="logo-placeholder">
+            <div class="logo-mark">
                 DFMM
             </div>
 
-            <div>
+            <div class="logo-text">
                 <h1>Darul Falah Model Madrasah</h1>
                 <p>Sylhet, Bangladesh</p>
             </div>
 
-        </div>
+        </a>
 
-        <nav>
+
+        <button class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </button>
+
+
+        <nav id="mainNav">
+
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#academic">Academic</a>
@@ -459,6 +1208,11 @@
             <a href="#notice">Notice</a>
             <a href="#gallery">Gallery</a>
             <a href="#contact">Contact</a>
+
+            <a href="#result" class="nav-button">
+                Results
+            </a>
+
         </nav>
 
     </div>
@@ -466,31 +1220,47 @@
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+     ===================================================== -->
 
 <section class="hero" id="home">
 
-    <div class="hero-content">
+    <div class="container">
 
-        <h2>Darul Falah Model Madrasah</h2>
+        <div class="hero-content">
 
-        <h3>Education • Character • Faith</h3>
+            <div class="hero-badge">
+                <span></span>
+                WELCOME TO DARUL FALAH MODEL MADRASAH
+            </div>
 
-        <p>
-            Welcome to the official website of Darul Falah Model Madrasah.
-            Explore our academic activities, examinations, notices,
-            events and student information.
-        </p>
+            <h2>
+                Education for Knowledge,
+                Character & Future
+            </h2>
 
-        <div class="buttons">
+            <h3>
+                শিক্ষা • চরিত্র • আদর্শ
+            </h3>
 
-            <a href="#examination" class="btn btn-primary">
-                Check Result
-            </a>
+            <p>
+                Welcome to the official website of Darul Falah Model
+                Madrasah. Discover our academic programs, examination
+                information, notices, events and institutional activities.
+            </p>
 
-            <a href="#notice" class="btn btn-secondary">
-                Notice Board
-            </a>
+            <div class="hero-buttons">
+
+                <a href="#result" class="btn btn-primary">
+                    🔎 Check Student Result
+                </a>
+
+                <a href="#about" class="btn btn-outline">
+                    Discover DFMM →
+                </a>
+
+            </div>
 
         </div>
 
@@ -499,65 +1269,144 @@
 </section>
 
 
-<!-- ================= QUICK LINKS ================= -->
+<!-- =====================================================
+     QUICK ACCESS
+     ===================================================== -->
 
-<section class="quick-section">
-
-    <div class="quick-grid">
-
-        <a href="#examination" class="quick-card">
-            <div class="icon">📊</div>
-            <h3>Student Results</h3>
-            <p>Check examination results</p>
-        </a>
-
-        <a href="#notice" class="quick-card">
-            <div class="icon">📢</div>
-            <h3>Notice Board</h3>
-            <p>Latest institutional notices</p>
-        </a>
-
-        <a href="#academic" class="quick-card">
-            <div class="icon">📚</div>
-            <h3>Academic</h3>
-            <p>Academic information</p>
-        </a>
-
-        <a href="#contact" class="quick-card">
-            <div class="icon">☎️</div>
-            <h3>Contact</h3>
-            <p>Get in touch with us</p>
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section class="about" id="about">
+<div class="quick-wrap">
 
     <div class="container">
 
-        <div class="section-title">
-            <h2>About Our Institution</h2>
-            <p>Welcome to Darul Falah Model Madrasah</p>
+        <div class="quick-grid">
+
+            <a href="#result" class="quick-card">
+
+                <div class="quick-icon">📊</div>
+
+                <h3>Student Results</h3>
+
+                <p>Search examination results</p>
+
+            </a>
+
+
+            <a href="#notice" class="quick-card">
+
+                <div class="quick-icon">📢</div>
+
+                <h3>Notice Board</h3>
+
+                <p>Latest announcements</p>
+
+            </a>
+
+
+            <a href="#academic" class="quick-card">
+
+                <div class="quick-icon">📚</div>
+
+                <h3>Academic</h3>
+
+                <p>Classes & curriculum</p>
+
+            </a>
+
+
+            <a href="#contact" class="quick-card">
+
+                <div class="quick-icon">☎️</div>
+
+                <h3>Contact Us</h3>
+
+                <p>Get in touch with DFMM</p>
+
+            </a>
+
         </div>
 
-        <div class="about-content">
+    </div>
 
-            <p>
-                Darul Falah Model Madrasah is an academic institution
-                committed to providing quality education while developing
-                strong character, discipline and moral values among students.
-            </p>
+</div>
 
-            <p>
-                Our goal is to create a learning environment where students
-                can develop knowledge, skills and good character for a
-                successful future.
-            </p>
+
+<!-- =====================================================
+     WELCOME / ABOUT
+     ===================================================== -->
+
+<section class="welcome" id="about">
+
+    <div class="container">
+
+        <div class="welcome-grid">
+
+            <div class="welcome-text">
+
+                <span class="eyebrow">
+                    About Our Institution
+                </span>
+
+                <h2>
+                    Welcome to Darul Falah Model Madrasah
+                </h2>
+
+                <p>
+                    Darul Falah Model Madrasah is an academic institution
+                    committed to quality education, discipline, character
+                    development and moral values.
+                </p>
+
+                <p>
+                    We believe that education is not only about academic
+                    achievement. It is also about developing responsible,
+                    confident and principled individuals who can contribute
+                    positively to society.
+                </p>
+
+                <div class="welcome-list">
+
+                    <div>
+                        <span class="check">✓</span>
+                        Quality Academic Education
+                    </div>
+
+                    <div>
+                        <span class="check">✓</span>
+                        Character & Moral Development
+                    </div>
+
+                    <div>
+                        <span class="check">✓</span>
+                        Student-Centered Learning
+                    </div>
+
+                </div>
+
+                <a href="#academic" class="btn btn-primary">
+                    Explore Academics →
+                </a>
+
+            </div>
+
+
+            <div class="welcome-visual">
+
+                <div class="visual-circle">
+
+                    <div class="visual-inner">
+
+                        <strong>DFMM</strong>
+
+                        <span>
+                            KNOWLEDGE<br>
+                            CHARACTER<br>
+                            FUTURE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -566,59 +1415,149 @@
 </section>
 
 
-<!-- ================= ACADEMIC ================= -->
+<!-- =====================================================
+     STATS
+     ===================================================== -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <strong>01+</strong>
+                <span>Academic Community</span>
+            </div>
+
+            <div class="stat">
+                <strong>100%</strong>
+                <span>Commitment to Students</span>
+            </div>
+
+            <div class="stat">
+                <strong>∞</strong>
+                <span>Learning Opportunities</span>
+            </div>
+
+            <div class="stat">
+                <strong>1</strong>
+                <span>Shared Educational Vision</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ACADEMIC
+     ===================================================== -->
 
 <section id="academic">
 
     <div class="container">
 
-        <div class="section-title">
-            <h2>Academic Information</h2>
-            <p>Explore our academic activities and resources</p>
+        <div class="section-heading">
+
+            <span class="small">Academic Life</span>
+
+            <h2>Learn. Grow. Achieve.</h2>
+
+            <p>
+                Explore the academic resources and educational activities
+                of Darul Falah Model Madrasah.
+            </p>
+
         </div>
+
 
         <div class="academic-grid">
 
-            <div class="academic-card">
-                <h3>🎓 Classes</h3>
-                <p>
-                    Information about classes, sections and academic levels.
-                </p>
-            </div>
 
             <div class="academic-card">
-                <h3>📖 Subjects</h3>
+
+                <div class="card-icon">🎓</div>
+
+                <h3>Classes</h3>
+
                 <p>
-                    View subjects and curriculum information for students.
+                    Information about classes, sections and academic levels
+                    offered by the institution.
                 </p>
+
             </div>
 
-            <div class="academic-card">
-                <h3>📅 Academic Calendar</h3>
-                <p>
-                    Important academic dates and institutional activities.
-                </p>
-            </div>
 
             <div class="academic-card">
-                <h3>📚 Syllabus</h3>
+
+                <div class="card-icon">📖</div>
+
+                <h3>Subjects & Curriculum</h3>
+
                 <p>
-                    Download syllabus and learning resources.
+                    Explore subjects, curriculum and learning activities
+                    for our students.
                 </p>
+
             </div>
 
-            <div class="academic-card">
-                <h3>👨‍🏫 Teachers</h3>
-                <p>
-                    Meet our teaching staff and academic team.
-                </p>
-            </div>
 
             <div class="academic-card">
-                <h3>🏆 Achievements</h3>
+
+                <div class="card-icon">📅</div>
+
+                <h3>Academic Calendar</h3>
+
                 <p>
-                    Discover the achievements of our students and institution.
+                    Important academic dates, programs and institutional
+                    activities throughout the year.
                 </p>
+
+            </div>
+
+
+            <div class="academic-card">
+
+                <div class="card-icon">📚</div>
+
+                <h3>Syllabus & Resources</h3>
+
+                <p>
+                    Access syllabus, study materials and useful academic
+                    resources.
+                </p>
+
+            </div>
+
+
+            <div class="academic-card">
+
+                <div class="card-icon">👨‍🏫</div>
+
+                <h3>Teachers & Staff</h3>
+
+                <p>
+                    Meet our dedicated teachers and members of the
+                    academic community.
+                </p>
+
+            </div>
+
+
+            <div class="academic-card">
+
+                <div class="card-icon">🏆</div>
+
+                <h3>Achievements</h3>
+
+                <p>
+                    Celebrate the academic, cultural and extracurricular
+                    achievements of our students.
+                </p>
+
             </div>
 
         </div>
@@ -628,99 +1567,117 @@
 </section>
 
 
-<!-- ================= NOTICE ================= -->
+<!-- =====================================================
+     NOTICE
+     ===================================================== -->
 
 <section class="notice-section" id="notice">
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-heading">
+
+            <span class="small">Stay Updated</span>
 
             <h2>Notice Board</h2>
 
-            <p>Latest notices and announcements</p>
+            <p>
+                Important announcements and updates from DFMM.
+            </p>
 
         </div>
 
-        <div class="notice-list">
 
-            <div class="notice">
-                <strong>Annual Examination 2026 Notice</strong>
-                <span class="notice-date">Coming Soon</span>
-            </div>
-
-            <div class="notice">
-                <strong>Class Routine Announcement</strong>
-                <span class="notice-date">Coming Soon</span>
-            </div>
-
-            <div class="notice">
-                <strong>Scholarship Examination Notice</strong>
-                <span class="notice-date">Coming Soon</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+        <div class="notice-layout">
 
 
-<!-- ================= EXAMINATION ================= -->
+            <div class="notice-intro">
 
-<section id="examination">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>Examination</h2>
-
-            <p>Examination information and student results</p>
-
-        </div>
-
-        <div class="exam-grid">
-
-            <div class="exam-card">
-
-                <div class="icon">📋</div>
-
-                <h3>Exam Routine</h3>
+                <h2>📢 Latest Updates</h2>
 
                 <p>
-                    View examination schedules and routines.
+                    Stay informed about examinations, academic activities,
+                    admission and important institutional announcements.
                 </p>
-
-            </div>
-
-            <div class="exam-card">
-
-                <div class="icon">📊</div>
-
-                <h3>Results</h3>
-
-                <p>
-                    Student result search system will be available here.
-                </p>
-
-                <br>
 
                 <a href="#" class="btn btn-primary">
-                    Search Result
+                    View All Notices →
                 </a>
 
             </div>
 
-            <div class="exam-card">
 
-                <div class="icon">🏆</div>
+            <div class="notice-list">
 
-                <h3>Scholarship</h3>
 
-                <p>
-                    Scholarship examination information and results.
-                </p>
+                <div class="notice">
+
+                    <div class="notice-date-box">
+                        2026
+                    </div>
+
+                    <div class="notice-content">
+
+                        <strong>
+                            Annual Examination 2026
+                        </strong>
+
+                        <span>
+                            Examination notice will be published here.
+                        </span>
+
+                    </div>
+
+                    <span>→</span>
+
+                </div>
+
+
+                <div class="notice">
+
+                    <div class="notice-date-box">
+                        NEW
+                    </div>
+
+                    <div class="notice-content">
+
+                        <strong>
+                            Class Routine Announcement
+                        </strong>
+
+                        <span>
+                            Class routine and academic schedule.
+                        </span>
+
+                    </div>
+
+                    <span>→</span>
+
+                </div>
+
+
+                <div class="notice">
+
+                    <div class="notice-date-box">
+                        2026
+                    </div>
+
+                    <div class="notice-content">
+
+                        <strong>
+                            Scholarship Examination
+                        </strong>
+
+                        <span>
+                            Scholarship examination information.
+                        </span>
+
+                    </div>
+
+                    <span>→</span>
+
+                </div>
+
 
             </div>
 
@@ -731,19 +1688,252 @@
 </section>
 
 
-<!-- ================= GALLERY ================= -->
+<!-- =====================================================
+     RESULT SEARCH
+     ===================================================== -->
+
+<section class="exam-section" id="examination">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="small">Examination</span>
+
+            <h2>Student Result Portal</h2>
+
+            <p>
+                Search examination results quickly and conveniently.
+            </p>
+
+        </div>
+
+
+        <div class="result-box" id="result">
+
+            <h2>🔎 Search Your Result</h2>
+
+            <p>
+                The official online result system of Darul Falah Model Madrasah
+                will allow students and guardians to check published results.
+            </p>
+
+
+            <div class="result-search">
+
+                <select>
+                    <option>Select Exam</option>
+                    <option>Annual Examination 2026</option>
+                    <option>Half-Yearly Examination 2026</option>
+                    <option>Scholarship Examination 2026</option>
+                </select>
+
+                <select>
+                    <option>Select Class</option>
+                    <option>Class One</option>
+                    <option>Class Two</option>
+                    <option>Class Three</option>
+                </select>
+
+                <input
+                    type="text"
+                    placeholder="Roll Number"
+                >
+
+                <button onclick="resultMessage()">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MESSAGE
+     ===================================================== -->
+
+<section class="message">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="small">Leadership</span>
+
+            <h2>Message from the Institution</h2>
+
+            <p>
+                A message from the leadership of Darul Falah Model Madrasah.
+            </p>
+
+        </div>
+
+
+        <div class="message-card">
+
+            <div class="message-photo">
+                Principal's<br>
+                Photo
+            </div>
+
+
+            <div class="message-text">
+
+                <blockquote>
+                    "Our mission is to provide an environment where every
+                    student can learn, grow and develop the knowledge,
+                    discipline and character needed for a meaningful future."
+                </blockquote>
+
+                <strong>
+                    Principal / Head of Institution
+                </strong>
+
+                <br>
+
+                <small>
+                    Darul Falah Model Madrasah
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NEWS & EVENTS
+     ===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="small">Campus Life</span>
+
+            <h2>News & Events</h2>
+
+            <p>
+                Discover activities, programs and memorable moments
+                from our institution.
+            </p>
+
+        </div>
+
+
+        <div class="news-grid">
+
+
+            <div class="news-card">
+
+                <div class="news-image">
+                    📚
+                </div>
+
+                <div class="news-body">
+
+                    <small>ACADEMIC</small>
+
+                    <h3>
+                        Academic Activities
+                    </h3>
+
+                    <p>
+                        Updates about learning activities and educational
+                        programs at DFMM.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="news-card">
+
+                <div class="news-image">
+                    🏆
+                </div>
+
+                <div class="news-body">
+
+                    <small>ACHIEVEMENT</small>
+
+                    <h3>
+                        Student Achievements
+                    </h3>
+
+                    <p>
+                        Celebrating the success and achievements of
+                        our students.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="news-card">
+
+                <div class="news-image">
+                    🎉
+                </div>
+
+                <div class="news-body">
+
+                    <small>EVENT</small>
+
+                    <h3>
+                        Institutional Events
+                    </h3>
+
+                    <p>
+                        Important events, programs and activities
+                        organized by DFMM.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+     ===================================================== -->
 
 <section class="gallery" id="gallery">
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-heading">
 
-            <h2>Gallery</h2>
+            <span class="small">Our Campus Life</span>
 
-            <p>Moments from Darul Falah Model Madrasah</p>
+            <h2>Photo Gallery</h2>
+
+            <p>
+                A glimpse of academic, cultural and extracurricular
+                activities at DFMM.
+            </p>
 
         </div>
+
 
         <div class="gallery-grid">
 
@@ -771,6 +1961,14 @@
                 🎉 Events
             </div>
 
+            <div class="gallery-item">
+                📖 Book Festival
+            </div>
+
+            <div class="gallery-item">
+                🏫 Campus
+            </div>
+
         </div>
 
     </div>
@@ -778,27 +1976,41 @@
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- =====================================================
+     CONTACT
+     ===================================================== -->
 
 <section class="contact" id="contact">
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-heading">
 
-            <h2 style="color:white;">Contact Us</h2>
+            <span class="small" style="color:#bde69a;">
+                Get In Touch
+            </span>
 
-            <p style="color:#d5e6dc;">
-                Darul Falah Model Madrasah
+            <h2 style="color:white;">
+                Contact Darul Falah Model Madrasah
+            </h2>
+
+            <p style="color:rgba(255,255,255,.65);">
+                Official contact information will be added here.
             </p>
 
         </div>
 
+
         <div class="contact-grid">
 
-            <div class="contact-box">
 
-                <h3>📍 Address</h3>
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <h3>Address</h3>
 
                 <p>
                     Sylhet, Bangladesh
@@ -806,25 +2018,36 @@
 
             </div>
 
-            <div class="contact-box">
 
-                <h3>📞 Phone</h3>
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <h3>Phone</h3>
 
                 <p>
-                    Official contact number
+                    Official phone number
                 </p>
 
             </div>
 
-            <div class="contact-box">
 
-                <h3>✉️ Email</h3>
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    ✉️
+                </div>
+
+                <h3>Email</h3>
 
                 <p>
-                    Official email address
+                    Official institutional email
                 </p>
 
             </div>
+
 
         </div>
 
@@ -833,20 +2056,118 @@
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
 
 <footer>
 
-    <p>
-        © 2026 Darul Falah Model Madrasah. All Rights Reserved.
-    </p>
+    <div class="container">
 
-    <p>
-        Official Institutional Website
-    </p>
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    Darul Falah Model Madrasah
+                </h2>
+
+                <p>
+                    Education • Character • Faith
+                </p>
+
+                <p>
+                    Building knowledge, developing character and
+                    preparing students for the future.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="#about">About Us</a>
+                <a href="#academic">Academic</a>
+                <a href="#examination">Examination</a>
+                <a href="#notice">Notice Board</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Important</h3>
+
+                <a href="#result">Student Results</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Darul Falah Model Madrasah
+            </span>
+
+            <span>
+                Official Institutional Website
+            </span>
+
+        </div>
+
+    </div>
 
 </footer>
 
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script>
+
+function toggleMenu() {
+
+    const nav = document.getElementById("mainNav");
+
+    nav.classList.toggle("open");
+
+}
+
+
+/* Close mobile menu after clicking a link */
+
+document.querySelectorAll("#mainNav a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        document.getElementById("mainNav").classList.remove("open");
+
+    });
+
+});
+
+
+/* Temporary result button */
+
+function resultMessage() {
+
+    alert(
+        "The online result system is currently being developed. " +
+        "Soon students will be able to search their published results here."
+    );
+
+}
+
+</script>
 
 </body>
 </html>
